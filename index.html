@@ -9,66 +9,65 @@
   <body>
     <article class="deck">
       <section>
-        <h1>NPM &amp; GULP</h1>
+        <h1>NPM</h1><img class="small" src="images/npm.png">
+      </section>
+      <section data-bespoke-backdrop="orion">
+        <h2>What is it ?</h2>
+        <delimiter></delimiter>
+        <blockquote>npm is the package manager for JavaScript and the world’s largest software registry.</blockquote>
+        <delimiter></delimiter><code>npm install bootstrap</code><code>npm update jquery</code>
       </section>
       <section>
-        <h2>Images</h2><img src="images/bespoke-logo.jpg">
-      </section>
-      <section>
-        <h2>Keyboard Interaction</h2>
-        <h3>Powered by <a href="https://github.com/bespokejs/bespoke-keys">bespoke-keys</a></h3>
-      </section>
-      <section>
-        <h2>Touch Interaction</h2>
-        <h3>Powered by <a href="https://github.com/bespokejs/bespoke-touch">bespoke-touch</a></h3>
-      </section>
-      <section>
-        <h2>Responsive Slides</h2>
-        <h3>Powered by <a href="https://github.com/bespokejs/bespoke-scale">bespoke-scale</a></h3>
-      </section>
-      <section>
-        <h2>Bullet List</h2>
-        <h3>Powered by <a href="https://github.com/bespokejs/bespoke-bullets">bespoke-bullets</a></h3>
+        <h2>Why using npm ?</h2>
         <ul class="build build-items">
-          <li>Bullet 1</li>
-          <li>Bullet 2</li>
-          <li>Bullet 3</li>
+          <li>Easiest way to use external librairies</li>
+          <li>Clean dependencies with <strong>package.json</strong></li>
+          <li>Lighter code</li>
         </ul>
       </section>
       <section>
-        <iframe width="640" height="360" src="https://www.youtube.com/embed/AV3kYPutYfs?rel=0&amp;amp;showinfo=0&amp;amp;controls=0&amp;amp;enablejsapi=1&amp;amp;loop=1&amp;amp;playlist=AV3kYPutYfs" frameborder="0" allowfullscreen data-volume="0"></iframe>
+        <h2>How to use it</h2>
+        <pre><code class="language-javascript">npm install < package ></code>
+          <delimiter></delimiter><code class="language-javascript">// In Node Environment 
+var $ = require('jquery')</code>
+          <delimiter></delimiter><code class="language-javascript">// In the browser
+< script src="node_modules/ ... / jquery.js"></code></pre>
       </section>
       <section>
-        <h2>Syntax Highlighting</h2>
-        <h3>Powered by <a href="https://twitter.com/LeaVerou">Lea Verou</a>'s <a href="https://github.com/PrismJS/prism">Prism</a></h3>
-        <pre><code class="language-javascript">(function() {
-  function hanoi(n, a, b, c) {
-    return n ? hanoi(n - 1, a, c, b)
-        .concat([[a, b]])
-        .concat(hanoi(n - 1, c, b, a)) : [];
-  }
-  return hanoi(3, 'left', 'right', 'mid')
-    .map(function(d) {
-      return d[0] + ' -&gt; ' + d[1];
-    });
-})();
+        <h1>Gulp</h1><img class="small gulp" src="images/gulp.png">
+      </section>
+      <section data-bespoke-backdrop="orion">
+        <h2>What is it ?</h2>
+        <delimiter></delimiter>
+        <blockquote>Gulp is a toolkit for automating painful or time-consuming tasks in your development workflow, so you can stop messing around and build something.</blockquote>
+        <delimiter></delimiter>
+        <pre class="black"><code class="language-javascript">gulp.task('css', function(){
+  return gulp.src('client/templates/*.less')
+    .pipe(less())
+    .pipe(minifyCSS())
+    .pipe(gulp.dest('build/css'))
+});
 </code></pre>
       </section>
-      <section data-bespoke-hash="named-route">
-        <h2>Named Route</h2>
-        <h3>Powered by <a href="https://github.com/bespokejs/bespoke-hash">bespoke-hash</a></h3>
-        <p>Look up! This route has been named with a <em>data-bespoke-hash</em> attribute.</p>
-      </section>
       <section>
-        <h2 class="bullet">Just the beginning…</h2>
+        <h2>Why using Gulp ?</h2>
         <ul class="build build-items">
-          <li>Edit <a href="https://pugjs.org">Pug (formerly Jade)</a> markup in <em class="path">src/index.pug</em></li>
-          <li>Edit <a href="http://stylus-lang.com">Stylus</a> styles in <em class="path">src/styles/user.styl</em></li>
-          <li>Edit JavaScript in <em class="path">src/scripts/main.js</em></li>
-        </ul><br>
-        <ul class="build">
-          <li><strong>Enjoy! :)</strong><a href="https://twitter.com/markdalgleish"> -@markdalgleish</a></li>
+          <li>Gulp solves the problem of <strong>repetition</strong></li>
+          <li><strong>Automate</strong> tasks such as :
+            <ul class="build build-items">
+              <li>Bundling and Minifying multiple files</li>
+              <li>Refreshing the browser ( hot-reload)</li>
+              <li>Quickly run unit testing</li>
+              <li>Compile code ( Less / Sass )</li>
+              <li>Copying files and cleaning folders</li>
+            </ul>
+          </li>
+          <li>Simple to use thanks to the task system</li>
         </ul>
+      </section>
+      <section data-bespoke-backdrop="applause">
+        <h1>Thanks for listening</h1>
+        <h2>Any questions ?</h2>
       </section>
     </article>
     <script src="build/build.js"></script>
