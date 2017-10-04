@@ -12,66 +12,71 @@ html
     article.deck
 
       section
-        h1 NPM &amp; GULP
+        h1 NPM
+        img.small(src="images/npm.png")
+
+      section(data-bespoke-backdrop='orion')
+        h2 What is it ?
+        delimiter
+        blockquote npm is the package manager for JavaScript and the world’s largest software registry.
+        delimiter
+        code npm install bootstrap
+        code npm update jquery
 
       section
-        h2 Images
-        img(src="images/bespoke-logo.jpg")
-
-      section
-        h2 Keyboard Interaction
-        h3 Powered by <a href="https://github.com/bespokejs/bespoke-keys">bespoke-keys</a>
-
-      section
-        h2 Touch Interaction
-        h3 Powered by <a href="https://github.com/bespokejs/bespoke-touch">bespoke-touch</a>
-
-      section
-        h2 Responsive Slides
-        h3 Powered by <a href="https://github.com/bespokejs/bespoke-scale">bespoke-scale</a>
-
-      section
-        h2 Bullet List
-        h3 Powered by <a href="https://github.com/bespokejs/bespoke-bullets">bespoke-bullets</a>
+        h2 Why using npm ?
         ul.build.build-items
-          li Bullet 1
-          li Bullet 2
-          li Bullet 3
-
+          li Easiest way to use external librairies
+          li Clean dependencies with <strong>package.json</strong>
+          li Lighter code
+      
       section
-        iframe(width="640", height="360", src="https://www.youtube.com/embed/AV3kYPutYfs?rel=0&amp;showinfo=0&amp;controls=0&amp;enablejsapi=1&amp;loop=1&amp;playlist=AV3kYPutYfs", frameborder="0", allowfullscreen, data-volume="0")
-
-      section
-        h2 Syntax Highlighting
-        h3 Powered by <a href="https://twitter.com/LeaVerou">Lea Verou</a>'s <a href="https://github.com/PrismJS/prism">Prism</a>
+        h2 How to use it
         pre
           code.language-javascript.
-            (function() {
-              function hanoi(n, a, b, c) {
-                return n ? hanoi(n - 1, a, c, b)
-                    .concat([[a, b]])
-                    .concat(hanoi(n - 1, c, b, a)) : [];
-              }
-              return hanoi(3, 'left', 'right', 'mid')
-                .map(function(d) {
-                  return d[0] + ' -&gt; ' + d[1];
-                });
-            })();
-
-      section(data-bespoke-hash='named-route')
-        h2 Named Route
-        h3 Powered by <a href="https://github.com/bespokejs/bespoke-hash">bespoke-hash</a>
-        p Look up! This route has been named with a <em>data-bespoke-hash</em> attribute.
+            npm install < package >
+          delimiter
+          code.language-javascript.
+            // In Node Environment 
+            var $ = require('jquery')
+          delimiter
+          code.language-javascript.
+            // In the browser
+            < script src="node_modules/ ... / jquery.js">
       section
-        h2.bullet Just the beginning…
+        h1 Gulp
+        img.small.gulp(src="images/gulp.png")
+      
+      section(data-bespoke-backdrop='orion')
+        h2 What is it ?
+        delimiter
+        blockquote Gulp is a toolkit for automating painful or time-consuming tasks in your development workflow, so you can stop messing around and build something.
+        delimiter
+        pre.black
+          code.language-javascript.
+            gulp.task('css', function(){
+              return gulp.src('client/templates/*.less')
+                .pipe(less())
+                .pipe(minifyCSS())
+                .pipe(gulp.dest('build/css'))
+            });
+
+      section
+        h2 Why using Gulp ?
         ul.build.build-items
-          li Edit <a href="https://pugjs.org">Pug (formerly Jade)</a> markup in <em class="path">src/index.pug</em>
-          li Edit <a href="http://stylus-lang.com">Stylus</a> styles in <em class="path">src/styles/user.styl</em>
-          li Edit JavaScript in <em class="path">src/scripts/main.js</em>
-        br
-        ul.build
-          li
-            strong Enjoy! :)
-            a(href='https://twitter.com/markdalgleish')  -@markdalgleish
+          li Gulp solves the problem of <strong>repetition</strong>
+          li <strong>Automate</strong> tasks such as :
+            ul.build.build-items
+              li Bundling and Minifying multiple files
+              li Refreshing the browser ( hot-reload)
+              li Quickly run unit testing
+              li Compile code ( Less / Sass )
+              li Copying files and cleaning folders
+          li Simple to use thanks to the task system
+          
+      section(data-bespoke-backdrop='applause')
+        h1 Thanks for listening
+        h2 Any questions ?
+      
 
     script(src='build/build.js')
